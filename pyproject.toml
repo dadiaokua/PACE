@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pace-dvfs"
+version = "0.1.0"
+description = "Position-Aware Control for Energy-efficient LLM serving (PACE)"
+readme = "README.md"
+license = { text = "Apache-2.0" }
+requires-python = ">=3.9"
+authors = [{ name = "PACE authors" }]
+keywords = ["llm", "dvfs", "vllm", "energy", "gpu", "continuous-batching"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: Apache Software License",
+  "Programming Language :: Python :: 3",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+  "Topic :: System :: Hardware",
+]
+dependencies = []
+
+[project.optional-dependencies]
+nvml = ["nvidia-ml-py3>=7.352.0"]
+dev = ["pytest>=7.0"]
+
+[project.urls]
+Homepage = "https://github.com/dadiaokua/PACE"
+Repository = "https://github.com/dadiaokua/PACE"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["pace*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
